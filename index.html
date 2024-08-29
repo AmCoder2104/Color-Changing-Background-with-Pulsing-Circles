@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulsing circle</title>
+    <style>
+        body{
+            background-color:#3498db ;
+            transition: 1s ease;
+            overflow: hidden;
+            height: 100vh;
+        
+
+        }
+        .circle{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%;
+            position: absolute;
+            background-color: red;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+        @keyframes 
+        
+        pulse{
+            0% {  
+                transform: scale(1);  
+            }  
+            50% {  
+                transform: scale(1.5);  
+            }  
+            100% {  
+                transform: scale(1);  
+            }  
+            
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div class="pulse">
+    
+        </div>
+    </body>
+    </html>
+    <script>
+        let colors = [
+            '#3498db', '#e74c3c', '#f1c40f', '#2ecc71', '#9b59b6'
+        ]
+        let colorindex = 0
+        function changeBCColors() {
+           
+           colorindex   = (colorindex+ 1) % colors.length; 
+            document.body.style.backgroundColor = colors[colorindex]
+        }
+        
+        function circleCompilation(){
+          let second = document.createElement('div')
+          second.classList.add('circle')
+        //   circle.style.top and circle.style.left:
+
+// These properties are used to set the position of the circle element on the webpage.
+// style.top controls the vertical position, while style.left controls the horizontal position.
+        //   The code places the circle at a random spot on the screen, using a percentage of the screen's height and width.
+          second.style.top = Math.random() * 100 + 'vh';  
+          second.style.left = Math.random() * 100 + 'vw'; 
+          document.body.appendChild(second)
+        }
+setInterval(changeBCColors, 2000)
+        
+
+        for (let i = 0; i < 10; i++) {  
+            circleCompilation();  
+        }  
+    
+    </script>
+   

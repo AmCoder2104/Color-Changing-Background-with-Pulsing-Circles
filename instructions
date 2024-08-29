@@ -1,0 +1,18 @@
+HTML Structure:
+
+Create a basic HTML structure with a <div> element that will contain the pulsing circles.
+CSS Styles:
+
+Style the body with a default background color of your choice.
+Create a class for the circles that sets their size (e.g., 50px by 50px), background color (e.g., red), and border-radius to make them circular.
+Create a pulsing animation using @keyframes that changes the scale of the circles to create a pulsing effect.
+Use a separate class for the background color change, which will transition smoothly between colors.
+JavaScript Functionality:
+
+Use JavaScript to create a function that changes the background color of the body at regular intervals (e.g., every 2 seconds).
+Create multiple circles and append them to the container, applying the pulsing animation to each circle.
+Ensure that the circles are positioned in a way that they are evenly spaced out.
+Use setInterval to change the background color and create an array of colors to cycle through.
+Use CSS position: absolute; for the circles to position them freely on the page.
+Experiment with different sizes, colors, and pulsing speeds for the circles to create a visually appealing effect.
+Once you complete the exercise, feel free to share your code, and I can help review it!
