@@ -3,79 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulsing circle</title>
+    <title>Pulsing Circle</title>
     <style>
-        body{
-            background-color:#3498db ;
-            transition: 1s ease;
-            overflow: hidden;
-            height: 100vh;
-        
-
+        /* Styles for body element */
+        body {
+            background-color: #3498db; /* Initial background color */
+            transition: 1s ease;       /* Smooth transition for background color change */
+            overflow: hidden;          /* Hide overflow for cleaner layout */
+            height: 100vh;             /* Full viewport height */
         }
-        .circle{
+
+        /* Styles for pulsing circle */
+        .circle {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100px; 
-            height: 100px; 
-            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;        /* Circle shape */
             position: absolute;
             background-color: red;
-            animation: pulse 1.5s infinite ease-in-out;
+            animation: pulse 1.5s infinite ease-in-out; /* Pulsing animation */
         }
-        @keyframes 
-        
-        pulse{
+
+        /* Keyframes for pulsing effect */
+        @keyframes pulse {
             0% {  
-                transform: scale(1);  
-            }  
-            50% {  
-                transform: scale(1.5);  
-            }  
-            100% {  
-                transform: scale(1);  
-            }  
-            
+                transform: scale(1);    /* Initial size */
+            }
+            50% {
+                transform: scale(1.5);  /* Enlarged size */
+            }
+            100% {
+                transform: scale(1);    /* Back to initial size */
+            }
         }
-        
-        </style>
-    </head>
-    <body>
-        <div class="pulse">
-    
-        </div>
-    </body>
-    </html>
-    <script>
-        let colors = [
-            '#3498db', '#e74c3c', '#f1c40f', '#2ecc71', '#9b59b6'
-        ]
-        let colorindex = 0
-        function changeBCColors() {
-           
-           colorindex   = (colorindex+ 1) % colors.length; 
-            document.body.style.backgroundColor = colors[colorindex]
-        }
-        
-        function circleCompilation(){
-          let second = document.createElement('div')
-          second.classList.add('circle')
-        //   circle.style.top and circle.style.left:
+    </style>
+</head>
+<body>
+    <div class="pulse"></div> <!-- Placeholder div for pulsing circle -->
+</body>
 
-// These properties are used to set the position of the circle element on the webpage.
-// style.top controls the vertical position, while style.left controls the horizontal position.
-        //   The code places the circle at a random spot on the screen, using a percentage of the screen's height and width.
-          second.style.top = Math.random() * 100 + 'vh';  
-          second.style.left = Math.random() * 100 + 'vw'; 
-          document.body.appendChild(second)
-        }
-setInterval(changeBCColors, 2000)
-        
+<script>
+    /* Array of colors to change the background */
+    let colors = ['#3498db', '#e74c3c', '#f1c40f', '#2ecc71', '#9b59b6'];
+    let colorindex = 0; /* Starting index for colors */
 
-        for (let i = 0; i < 10; i++) {  
-            circleCompilation();  
-        }  
-    
-    </script>
-   
+    /* Function to change background color every 2 seconds */
+    function changeBCColors() {
+        colorindex = (colorindex + 1) % colors.length; /* Cycle through colors */
+        document.body.style.backgroundColor = colors[colorindex]; /* Apply new color */
+    }
+
+    /* Function to create and position a circle randomly */
+    function circleCompilation() {
+        let second = document.createElement('div'); /* Create a new div element */
+        second.classList.add('circle'); /* Add 'circle' class to new element */
+
+        /* Randomize position of the circle on the screen */
+        second.style.top = Math.random() * 100 + 'vh'; /* Random vertical position */
+        second.style.left = Math.random() * 100 + 'vw'; /* Random horizontal position */
+
+        /* Append the circle to the body */
+        document.body.appendChild(second);
+    }
+
+    /* Change background color every 2 seconds */
+    setInterval(changeBCColors, 2000);
+
+    /* Create 10 randomly positioned circles */
+    for (let i = 0; i < 10; i++) {
+        circleCompilation();
+    }
+</script>
+</html>
